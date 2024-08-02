@@ -1,0 +1,51 @@
+{
+  "name": "prettier-lines-before-headings",
+  "version": "1.0.0",
+  "description": "A Prettier plugin to add blank lines before Markdown headings for readability",
+  "author": "Ihor Oleksandrov",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihor-oleks/prettier-lines-before-headings.git"
+  },
+  "engines": {
+    "node": ">=20.16.0",
+    "pnpm": ">=9.6.0"
+  },
+  "scripts": {
+    "build": "esbuild ./src/index.ts --bundle --outdir=dist --platform=node \"--external:prettier\"",
+    "clean": "rimraf ./dist/",
+    "format": "prettier --cache --write .",
+    "lint": "eslint ./src/",
+    "prepare": "husky && pnpm clean && pnpm build"
+  },
+  "devDependencies": {
+    "@eslint/js": "~9.8.0",
+    "@trivago/prettier-plugin-sort-imports": "~4.3.0",
+    "@types/node": "~22.1.0",
+    "esbuild": "~0.23.0",
+    "eslint": "~9.8.0",
+    "globals": "~15.9.0",
+    "husky": "~9.1.0",
+    "prettier": "~3.3.0",
+    "rimraf": "~6.0.0",
+    "typescript": "~5.4.0",
+    "typescript-eslint": "~8.0.0"
+  },
+  "peerDependencies": {
+    "prettier": "^3"
+  },
+  "keywords": [
+    "prettier",
+    "plugin",
+    "markdown",
+    "blank",
+    "lines",
+    "before",
+    "headings"
+  ]
+}
